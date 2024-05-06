@@ -37,7 +37,7 @@ def create_materia_tab(notebook):
     fecbaj_entry = tk.Entry(tab)
     fecbaj_entry.grid(row=6, column=1)
 
-    tk.Label(tab, text="Tipo (L/T/P): ").grid(row=7, column=0)
+    tk.Label(tab, text="Tipo (L): ").grid(row=7, column=0)
     tipo_entry = tk.Entry(tab)
     tipo_entry.grid(row=7, column=1)
 
@@ -59,22 +59,6 @@ def create_materia_tab(notebook):
 
     create_button = tk.Button(tab, text="Crear", command=create_materia)
     create_button.grid(row=8, column=0, columnspan=2)
-
-def search_materia(pclave):
-    # Función para buscar una materia
-    clave = pclave
-    with open('./db/Materias.csv', 'r') as file:
-        csv_reader = csv.DictReader(file)
-        for row in csv_reader:
-            if row['CLAVE,C,3'] == clave:
-                print(f"Descripción: {row['DESCRI,C,35']}")
-                print(f"Número de sesiones: {row['NSESIO,C,3']}")
-                print(f"Duración: {row['DURSES,C,3']}")
-                print(f"Taller: {row['TALLER,C,3']}")
-                print(f"Fecha de alta: {row['FECALT,D']}")
-                print(f"Fecha de baja: {row['FECBAJ,C,10']}")
-                print(f"Tipo: {row['TIPO,C,1']}")
-                # Agregar más información si es necesario
 
 def delete_materia_tab(notebook):
     # Pestaña para eliminar una materia
@@ -164,7 +148,7 @@ def update_materia_tab(notebook):
     fecbaj_entry = tk.Entry(tab)
     fecbaj_entry.grid(row=6, column=1)
 
-    tk.Label(tab, text="Nuevo tipo (L/T/P): ").grid(row=7, column=0)
+    tk.Label(tab, text="Nuevo tipo (L): ").grid(row=7, column=0)
     tipo_entry = tk.Entry(tab)
     tipo_entry.grid(row=7, column=1)
 
@@ -234,7 +218,7 @@ def search_materia_tab(notebook):
     search_button.grid(row=1, column=0, columnspan=2)
 
 def abc_file_one():
-    # Función para abrir una ventana con pestañas de CRUD de materias
+    # Función para abrir una ventana con pestañas de CRUD para las materias
     ventana = tk.Toplevel()
     ventana.title("CRUD de Materias")
 
@@ -267,5 +251,3 @@ def get_materias():
         for row in csv_reader:
             print(row['DESCRI,C,35'])
 
-def study_plans():
-    pass  # Aquí va la lógica para mostrar los planes de estudio
