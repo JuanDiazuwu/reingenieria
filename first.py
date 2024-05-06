@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from second import abc_file_one
-from third import study_plans
+from third import show_study_plans
 
 def drag_window():
     window = tk.Tk()
@@ -14,7 +14,7 @@ def drag_window():
                            font=("Arial", 20))
     button_study_plans = tk.Button(window, 
                                    text="2.- Listado de Planes de Estudio", 
-                                   command=study_plans, 
+                                   command=show_study_plans, 
                                    font=("Arial", 20))
     
     button_abc.pack(fill=tk.BOTH, expand=True)
